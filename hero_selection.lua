@@ -173,57 +173,57 @@ local sUserKeyDir = Chat.GetUserKeyDir()
 local sHasDevelopmentHeroList = {
 
 
-	"npc_dota_hero_silencer",
-	"npc_dota_hero_warlock",
-	"npc_dota_hero_necrolyte",
-	"npc_dota_hero_oracle",
-	"npc_dota_hero_witch_doctor",
-	"npc_dota_hero_lich",
-	"npc_dota_hero_death_prophet",
-	"npc_dota_hero_lion",
-	"npc_dota_hero_dazzle",
-	"npc_dota_hero_crystal_maiden",
-	"npc_dota_hero_zuus",
-	"npc_dota_hero_jakiro",
-	"npc_dota_hero_skywrath_mage",
-	"npc_dota_hero_lina",
-	"npc_dota_hero_queenofpain",
-	"npc_dota_hero_pugna",
-	"npc_dota_hero_shadow_shaman",
-	"npc_dota_hero_bane",
-	"npc_dota_hero_sven",
-	"npc_dota_hero_luna",
-	"npc_dota_hero_antimage",
-	"npc_dota_hero_arc_warden",
-	"npc_dota_hero_drow_ranger",
-	"npc_dota_hero_bloodseeker",
-	"npc_dota_hero_phantom_assassin",
-	"npc_dota_hero_phantom_lancer",
-	"npc_dota_hero_naga_siren",
-	"npc_dota_hero_huskar",
-	"npc_dota_hero_riki",
-	"npc_dota_hero_tidehunter",
-	"npc_dota_hero_axe",
-	"npc_dota_hero_slark",
-	"npc_dota_hero_juggernaut",
-	"npc_dota_hero_chaos_knight",
-	"npc_dota_hero_bristleback",
-	"npc_dota_hero_dragon_knight",
-	"npc_dota_hero_kunkka",
-	"npc_dota_hero_skeleton_king", 
-	"npc_dota_hero_ogre_magi",
-	"npc_dota_hero_sand_king",
-	"npc_dota_hero_bounty_hunter",
-	"npc_dota_hero_slardar",
-	"npc_dota_hero_legion_commander",
-	"npc_dota_hero_omniknight",
-	"npc_dota_hero_sniper",
-	"npc_dota_hero_viper",
-	"npc_dota_hero_nevermore",
-	"npc_dota_hero_medusa", 
-	"npc_dota_hero_templar_assassin",
-	"npc_dota_hero_razor",
-	"npc_dota_hero_mirana",
+	"npc_dota_hero_silencer", 			--沉默
+	"npc_dota_hero_warlock", 			--术士
+	"npc_dota_hero_necrolyte",			--NEC
+	"npc_dota_hero_oracle",				--神谕
+	"npc_dota_hero_witch_doctor",		--巫医
+	"npc_dota_hero_lich",				--巫妖
+	"npc_dota_hero_death_prophet",		--死亡先知
+	"npc_dota_hero_lion",				--莱恩
+	"npc_dota_hero_dazzle",				--戴泽
+	"npc_dota_hero_crystal_maiden",		--冰女
+	"npc_dota_hero_zuus",				--宙斯
+	"npc_dota_hero_jakiro",				--双头龙
+	"npc_dota_hero_skywrath_mage",		--天怒
+	"npc_dota_hero_lina",				--火女
+	"npc_dota_hero_queenofpain",		--女王
+	"npc_dota_hero_pugna",				--骨法
+	"npc_dota_hero_shadow_shaman",		--小Y
+	"npc_dota_hero_bane",				--痛苦之源
+	"npc_dota_hero_sven",				--斯温
+	"npc_dota_hero_luna",				--露娜
+	"npc_dota_hero_antimage",			--敌法
+	"npc_dota_hero_arc_warden",			--电狗
+	"npc_dota_hero_drow_ranger",		--小黑
+	"npc_dota_hero_bloodseeker",		--血魔
+	"npc_dota_hero_phantom_assassin",	--PA
+	"npc_dota_hero_phantom_lancer",		--猴子
+	"npc_dota_hero_naga_siren",			--小娜迦
+	"npc_dota_hero_huskar",				--哈斯卡
+	"npc_dota_hero_riki",				--力丸
+	"npc_dota_hero_tidehunter",			--潮汐
+	"npc_dota_hero_axe",				--斧王
+	"npc_dota_hero_slark",				--小鱼人
+	"npc_dota_hero_juggernaut",			--剑圣
+	"npc_dota_hero_chaos_knight",		--混沌
+	"npc_dota_hero_bristleback",		--钢背
+	"npc_dota_hero_dragon_knight",		--龙骑
+	"npc_dota_hero_kunkka",				--昆卡
+	"npc_dota_hero_skeleton_king", 		--骷髅王
+	"npc_dota_hero_ogre_magi",			--蓝胖
+	"npc_dota_hero_sand_king",			--沙王
+	"npc_dota_hero_bounty_hunter",		--赏金
+	"npc_dota_hero_slardar",			--大鱼人
+	"npc_dota_hero_legion_commander",	--军团
+	"npc_dota_hero_omniknight",			--全能
+	"npc_dota_hero_sniper",				--火枪
+	"npc_dota_hero_viper",				--毒龙
+	"npc_dota_hero_nevermore",			--影魔
+	"npc_dota_hero_medusa", 			--美杜莎
+	"npc_dota_hero_templar_assassin",	--TA
+	"npc_dota_hero_razor",				--电棍
+	"npc_dota_hero_mirana",				--白虎
 
 
 
@@ -242,12 +242,6 @@ local sFirstList = {
 	"npc_dota_hero_death_prophet",
 	"npc_dota_hero_lion",
 	"npc_dota_hero_dazzle",
-
-	
-}
-
-local sSecondList = {
-	
 	"npc_dota_hero_crystal_maiden",
 	"npc_dota_hero_zuus",
 	"npc_dota_hero_jakiro",
@@ -257,11 +251,6 @@ local sSecondList = {
 	"npc_dota_hero_pugna",
 	"npc_dota_hero_shadow_shaman",
 	"npc_dota_hero_bane",
-	
-}
-
-local sThirdList = {
-
 	"npc_dota_hero_sven",
 	"npc_dota_hero_luna",
 	"npc_dota_hero_antimage",
@@ -273,16 +262,10 @@ local sThirdList = {
 	"npc_dota_hero_naga_siren",
 	"npc_dota_hero_huskar",
 	"npc_dota_hero_riki",
-	"npc_dota_hero_bounty_hunter",
 	"npc_dota_hero_tidehunter",
 	"npc_dota_hero_axe",
 	"npc_dota_hero_slark",
 	"npc_dota_hero_juggernaut",
-
-}
-
-local sFourthList = {
-		
 	"npc_dota_hero_chaos_knight",
 	"npc_dota_hero_bristleback",
 	"npc_dota_hero_dragon_knight",
@@ -294,11 +277,231 @@ local sFourthList = {
 	"npc_dota_hero_slardar",
 	"npc_dota_hero_legion_commander",
 	"npc_dota_hero_omniknight",
+	"npc_dota_hero_sniper",
+	"npc_dota_hero_viper",
+	"npc_dota_hero_nevermore",
+	"npc_dota_hero_medusa", 
+	"npc_dota_hero_templar_assassin",
+	"npc_dota_hero_razor",
+	"npc_dota_hero_mirana",
+
+	
+}
+
+local sSecondList = {
+	
+	"npc_dota_hero_silencer",
+	"npc_dota_hero_warlock",
+	"npc_dota_hero_necrolyte",
+	"npc_dota_hero_oracle",
+	"npc_dota_hero_witch_doctor",
+	"npc_dota_hero_lich",
+	"npc_dota_hero_death_prophet",
+	"npc_dota_hero_lion",
+	"npc_dota_hero_dazzle",
+	"npc_dota_hero_crystal_maiden",
+	"npc_dota_hero_zuus",
+	"npc_dota_hero_jakiro",
+	"npc_dota_hero_skywrath_mage",
+	"npc_dota_hero_lina",
+	"npc_dota_hero_queenofpain",
+	"npc_dota_hero_pugna",
+	"npc_dota_hero_shadow_shaman",
+	"npc_dota_hero_bane",
+	"npc_dota_hero_sven",
+	"npc_dota_hero_luna",
+	"npc_dota_hero_antimage",
+	"npc_dota_hero_arc_warden",
+	"npc_dota_hero_drow_ranger",
+	"npc_dota_hero_bloodseeker",
+	"npc_dota_hero_phantom_assassin",
+	"npc_dota_hero_phantom_lancer",
+	"npc_dota_hero_naga_siren",
+	"npc_dota_hero_huskar",
+	"npc_dota_hero_riki",
+	"npc_dota_hero_tidehunter",
+	"npc_dota_hero_axe",
+	"npc_dota_hero_slark",
+	"npc_dota_hero_juggernaut",
+	"npc_dota_hero_chaos_knight",
+	"npc_dota_hero_bristleback",
+	"npc_dota_hero_dragon_knight",
+	"npc_dota_hero_kunkka",
+	"npc_dota_hero_skeleton_king", 
+	"npc_dota_hero_ogre_magi",
+	"npc_dota_hero_sand_king",
+	"npc_dota_hero_bounty_hunter",
+	"npc_dota_hero_slardar",
+	"npc_dota_hero_legion_commander",
+	"npc_dota_hero_omniknight",
+	"npc_dota_hero_sniper",
+	"npc_dota_hero_viper",
+	"npc_dota_hero_nevermore",
+	"npc_dota_hero_medusa", 
+	"npc_dota_hero_templar_assassin",
+	"npc_dota_hero_razor",
+	"npc_dota_hero_mirana",
+	
+}
+
+local sThirdList = {
+
+	"npc_dota_hero_silencer",
+	"npc_dota_hero_warlock",
+	"npc_dota_hero_necrolyte",
+	"npc_dota_hero_oracle",
+	"npc_dota_hero_witch_doctor",
+	"npc_dota_hero_lich",
+	"npc_dota_hero_death_prophet",
+	"npc_dota_hero_lion",
+	"npc_dota_hero_dazzle",
+	"npc_dota_hero_crystal_maiden",
+	"npc_dota_hero_zuus",
+	"npc_dota_hero_jakiro",
+	"npc_dota_hero_skywrath_mage",
+	"npc_dota_hero_lina",
+	"npc_dota_hero_queenofpain",
+	"npc_dota_hero_pugna",
+	"npc_dota_hero_shadow_shaman",
+	"npc_dota_hero_bane",
+	"npc_dota_hero_sven",
+	"npc_dota_hero_luna",
+	"npc_dota_hero_antimage",
+	"npc_dota_hero_arc_warden",
+	"npc_dota_hero_drow_ranger",
+	"npc_dota_hero_bloodseeker",
+	"npc_dota_hero_phantom_assassin",
+	"npc_dota_hero_phantom_lancer",
+	"npc_dota_hero_naga_siren",
+	"npc_dota_hero_huskar",
+	"npc_dota_hero_riki",
+	"npc_dota_hero_tidehunter",
+	"npc_dota_hero_axe",
+	"npc_dota_hero_slark",
+	"npc_dota_hero_juggernaut",
+	"npc_dota_hero_chaos_knight",
+	"npc_dota_hero_bristleback",
+	"npc_dota_hero_dragon_knight",
+	"npc_dota_hero_kunkka",
+	"npc_dota_hero_skeleton_king", 
+	"npc_dota_hero_ogre_magi",
+	"npc_dota_hero_sand_king",
+	"npc_dota_hero_bounty_hunter",
+	"npc_dota_hero_slardar",
+	"npc_dota_hero_legion_commander",
+	"npc_dota_hero_omniknight",
+	"npc_dota_hero_sniper",
+	"npc_dota_hero_viper",
+	"npc_dota_hero_nevermore",
+	"npc_dota_hero_medusa", 
+	"npc_dota_hero_templar_assassin",
+	"npc_dota_hero_razor",
+	"npc_dota_hero_mirana",
+
+}
+
+local sFourthList = {
+		
+	"npc_dota_hero_silencer",
+	"npc_dota_hero_warlock",
+	"npc_dota_hero_necrolyte",
+	"npc_dota_hero_oracle",
+	"npc_dota_hero_witch_doctor",
+	"npc_dota_hero_lich",
+	"npc_dota_hero_death_prophet",
+	"npc_dota_hero_lion",
+	"npc_dota_hero_dazzle",
+	"npc_dota_hero_crystal_maiden",
+	"npc_dota_hero_zuus",
+	"npc_dota_hero_jakiro",
+	"npc_dota_hero_skywrath_mage",
+	"npc_dota_hero_lina",
+	"npc_dota_hero_queenofpain",
+	"npc_dota_hero_pugna",
+	"npc_dota_hero_shadow_shaman",
+	"npc_dota_hero_bane",
+	"npc_dota_hero_sven",
+	"npc_dota_hero_luna",
+	"npc_dota_hero_antimage",
+	"npc_dota_hero_arc_warden",
+	"npc_dota_hero_drow_ranger",
+	"npc_dota_hero_bloodseeker",
+	"npc_dota_hero_phantom_assassin",
+	"npc_dota_hero_phantom_lancer",
+	"npc_dota_hero_naga_siren",
+	"npc_dota_hero_huskar",
+	"npc_dota_hero_riki",
+	"npc_dota_hero_tidehunter",
+	"npc_dota_hero_axe",
+	"npc_dota_hero_slark",
+	"npc_dota_hero_juggernaut",
+	"npc_dota_hero_chaos_knight",
+	"npc_dota_hero_bristleback",
+	"npc_dota_hero_dragon_knight",
+	"npc_dota_hero_kunkka",
+	"npc_dota_hero_skeleton_king", 
+	"npc_dota_hero_ogre_magi",
+	"npc_dota_hero_sand_king",
+	"npc_dota_hero_bounty_hunter",
+	"npc_dota_hero_slardar",
+	"npc_dota_hero_legion_commander",
+	"npc_dota_hero_omniknight",
+	"npc_dota_hero_sniper",
+	"npc_dota_hero_viper",
+	"npc_dota_hero_nevermore",
+	"npc_dota_hero_medusa", 
+	"npc_dota_hero_templar_assassin",
+	"npc_dota_hero_razor",
+	"npc_dota_hero_mirana",
 	
 }
 
 local sFifthList = {
 
+	"npc_dota_hero_silencer",
+	"npc_dota_hero_warlock",
+	"npc_dota_hero_necrolyte",
+	"npc_dota_hero_oracle",
+	"npc_dota_hero_witch_doctor",
+	"npc_dota_hero_lich",
+	"npc_dota_hero_death_prophet",
+	"npc_dota_hero_lion",
+	"npc_dota_hero_dazzle",
+	"npc_dota_hero_crystal_maiden",
+	"npc_dota_hero_zuus",
+	"npc_dota_hero_jakiro",
+	"npc_dota_hero_skywrath_mage",
+	"npc_dota_hero_lina",
+	"npc_dota_hero_queenofpain",
+	"npc_dota_hero_pugna",
+	"npc_dota_hero_shadow_shaman",
+	"npc_dota_hero_bane",
+	"npc_dota_hero_sven",
+	"npc_dota_hero_luna",
+	"npc_dota_hero_antimage",
+	"npc_dota_hero_arc_warden",
+	"npc_dota_hero_drow_ranger",
+	"npc_dota_hero_bloodseeker",
+	"npc_dota_hero_phantom_assassin",
+	"npc_dota_hero_phantom_lancer",
+	"npc_dota_hero_naga_siren",
+	"npc_dota_hero_huskar",
+	"npc_dota_hero_riki",
+	"npc_dota_hero_tidehunter",
+	"npc_dota_hero_axe",
+	"npc_dota_hero_slark",
+	"npc_dota_hero_juggernaut",
+	"npc_dota_hero_chaos_knight",
+	"npc_dota_hero_bristleback",
+	"npc_dota_hero_dragon_knight",
+	"npc_dota_hero_kunkka",
+	"npc_dota_hero_skeleton_king", 
+	"npc_dota_hero_ogre_magi",
+	"npc_dota_hero_sand_king",
+	"npc_dota_hero_bounty_hunter",
+	"npc_dota_hero_slardar",
+	"npc_dota_hero_legion_commander",
+	"npc_dota_hero_omniknight",
 	"npc_dota_hero_sniper",
 	"npc_dota_hero_viper",
 	"npc_dota_hero_nevermore",
@@ -314,83 +517,169 @@ local sFifthList = {
 
 local sPriestList = {
 
-	"npc_dota_hero_death_prophet",
-	"npc_dota_hero_jakiro",
-	"npc_dota_hero_lich",
-	"npc_dota_hero_lina",
+	"npc_dota_hero_silencer",
+	"npc_dota_hero_warlock",
 	"npc_dota_hero_necrolyte",
 	"npc_dota_hero_oracle",
-	"npc_dota_hero_pugna",
-	"npc_dota_hero_shadow_shaman",
-	"npc_dota_hero_silencer",
-	"npc_dota_hero_skywrath_mage",
-	"npc_dota_hero_warlock",
 	"npc_dota_hero_witch_doctor",
-	"npc_dota_hero_zuus",
+	"npc_dota_hero_lich",
+	"npc_dota_hero_death_prophet",
 	"npc_dota_hero_lion",
 	"npc_dota_hero_dazzle",
-	"npc_dota_hero_bane",
+	"npc_dota_hero_crystal_maiden",
+	"npc_dota_hero_zuus",
+	"npc_dota_hero_jakiro",
+	"npc_dota_hero_skywrath_mage",
+	"npc_dota_hero_lina",
 	"npc_dota_hero_queenofpain",
+	"npc_dota_hero_pugna",
+	"npc_dota_hero_shadow_shaman",
+	"npc_dota_hero_bane",
+	"npc_dota_hero_sven",
+	"npc_dota_hero_luna",
+	"npc_dota_hero_antimage",
+	"npc_dota_hero_arc_warden",
+	"npc_dota_hero_drow_ranger",
+	"npc_dota_hero_bloodseeker",
+	"npc_dota_hero_phantom_assassin",
+	"npc_dota_hero_phantom_lancer",
+	"npc_dota_hero_naga_siren",
+	"npc_dota_hero_huskar",
+	"npc_dota_hero_riki",
+	"npc_dota_hero_tidehunter",
+	"npc_dota_hero_axe",
+	"npc_dota_hero_slark",
+	"npc_dota_hero_juggernaut",
+	"npc_dota_hero_chaos_knight",
+	"npc_dota_hero_bristleback",
+	"npc_dota_hero_dragon_knight",
+	"npc_dota_hero_kunkka",
+	"npc_dota_hero_skeleton_king", 
+	"npc_dota_hero_ogre_magi",
+	"npc_dota_hero_sand_king",
+	"npc_dota_hero_bounty_hunter",
+	"npc_dota_hero_slardar",
+	"npc_dota_hero_legion_commander",
+	"npc_dota_hero_omniknight",
+	"npc_dota_hero_sniper",
+	"npc_dota_hero_viper",
+	"npc_dota_hero_nevermore",
+	"npc_dota_hero_medusa", 
+	"npc_dota_hero_templar_assassin",
+	"npc_dota_hero_razor",
+	"npc_dota_hero_mirana",
 
 }
 
 local sMageList = {
 
-	"npc_dota_hero_crystal_maiden",
-	"npc_dota_hero_death_prophet",
-	"npc_dota_hero_jakiro",
-	"npc_dota_hero_lich",
-	"npc_dota_hero_lina",
+	"npc_dota_hero_silencer",
+	"npc_dota_hero_warlock",
 	"npc_dota_hero_necrolyte",
 	"npc_dota_hero_oracle",
-	"npc_dota_hero_pugna",
-	"npc_dota_hero_shadow_shaman",
-	"npc_dota_hero_silencer",
-	"npc_dota_hero_skywrath_mage",
-	"npc_dota_hero_warlock",
 	"npc_dota_hero_witch_doctor",
-	"npc_dota_hero_zuus",
+	"npc_dota_hero_lich",
+	"npc_dota_hero_death_prophet",
 	"npc_dota_hero_lion",
 	"npc_dota_hero_dazzle",
-	"npc_dota_hero_bane",
+	"npc_dota_hero_crystal_maiden",
+	"npc_dota_hero_zuus",
+	"npc_dota_hero_jakiro",
+	"npc_dota_hero_skywrath_mage",
+	"npc_dota_hero_lina",
 	"npc_dota_hero_queenofpain",
+	"npc_dota_hero_pugna",
+	"npc_dota_hero_shadow_shaman",
+	"npc_dota_hero_bane",
+	"npc_dota_hero_sven",
+	"npc_dota_hero_luna",
+	"npc_dota_hero_antimage",
+	"npc_dota_hero_arc_warden",
+	"npc_dota_hero_drow_ranger",
+	"npc_dota_hero_bloodseeker",
+	"npc_dota_hero_phantom_assassin",
+	"npc_dota_hero_phantom_lancer",
+	"npc_dota_hero_naga_siren",
+	"npc_dota_hero_huskar",
+	"npc_dota_hero_riki",
+	"npc_dota_hero_tidehunter",
+	"npc_dota_hero_axe",
+	"npc_dota_hero_slark",
+	"npc_dota_hero_juggernaut",
+	"npc_dota_hero_chaos_knight",
+	"npc_dota_hero_bristleback",
+	"npc_dota_hero_dragon_knight",
+	"npc_dota_hero_kunkka",
+	"npc_dota_hero_skeleton_king", 
+	"npc_dota_hero_ogre_magi",
+	"npc_dota_hero_sand_king",
+	"npc_dota_hero_bounty_hunter",
+	"npc_dota_hero_slardar",
+	"npc_dota_hero_legion_commander",
+	"npc_dota_hero_omniknight",
+	"npc_dota_hero_sniper",
+	"npc_dota_hero_viper",
+	"npc_dota_hero_nevermore",
+	"npc_dota_hero_medusa", 
+	"npc_dota_hero_templar_assassin",
+	"npc_dota_hero_razor",
+	"npc_dota_hero_mirana",
 
 }
 
 local sCarryList = {
 
+	"npc_dota_hero_silencer",
+	"npc_dota_hero_warlock",
+	"npc_dota_hero_necrolyte",
+	"npc_dota_hero_oracle",
+	"npc_dota_hero_witch_doctor",
+	"npc_dota_hero_lich",
+	"npc_dota_hero_death_prophet",
+	"npc_dota_hero_lion",
+	"npc_dota_hero_dazzle",
+	"npc_dota_hero_crystal_maiden",
+	"npc_dota_hero_zuus",
+	"npc_dota_hero_jakiro",
+	"npc_dota_hero_skywrath_mage",
+	"npc_dota_hero_lina",
+	"npc_dota_hero_queenofpain",
+	"npc_dota_hero_pugna",
+	"npc_dota_hero_shadow_shaman",
+	"npc_dota_hero_bane",
+	"npc_dota_hero_sven",
+	"npc_dota_hero_luna",
 	"npc_dota_hero_antimage",
 	"npc_dota_hero_arc_warden",
-	"npc_dota_hero_bloodseeker",
-	"npc_dota_hero_bristleback",
-	"npc_dota_hero_chaos_knight",
 	"npc_dota_hero_drow_ranger",
-	"npc_dota_hero_huskar",
-	"npc_dota_hero_kunkka",
-	"npc_dota_hero_luna",
-	"npc_dota_hero_medusa",
-	"npc_dota_hero_nevermore",
+	"npc_dota_hero_bloodseeker",
 	"npc_dota_hero_phantom_assassin",
 	"npc_dota_hero_phantom_lancer",
-	"npc_dota_hero_razor",
-	"npc_dota_hero_skeleton_king",
-	"npc_dota_hero_sniper",
-	"npc_dota_hero_sven",
-	"npc_dota_hero_templar_assassin",
-	"npc_dota_hero_viper",
-	"npc_dota_hero_ogre_magi",
-	"npc_dota_hero_sand_king",
+	"npc_dota_hero_naga_siren",
+	"npc_dota_hero_huskar",
 	"npc_dota_hero_riki",
-	"npc_dota_hero_bounty_hunter",
-	"npc_dota_hero_slardar",
-	"npc_dota_hero_legion_commander",
-	"npc_dota_hero_omniknight",
 	"npc_dota_hero_tidehunter",
 	"npc_dota_hero_axe",
 	"npc_dota_hero_slark",
 	"npc_dota_hero_juggernaut",
+	"npc_dota_hero_chaos_knight",
+	"npc_dota_hero_bristleback",
+	"npc_dota_hero_dragon_knight",
+	"npc_dota_hero_kunkka",
+	"npc_dota_hero_skeleton_king", 
+	"npc_dota_hero_ogre_magi",
+	"npc_dota_hero_sand_king",
+	"npc_dota_hero_bounty_hunter",
+	"npc_dota_hero_slardar",
+	"npc_dota_hero_legion_commander",
+	"npc_dota_hero_omniknight",
+	"npc_dota_hero_sniper",
+	"npc_dota_hero_viper",
+	"npc_dota_hero_nevermore",
+	"npc_dota_hero_medusa", 
+	"npc_dota_hero_templar_assassin",
+	"npc_dota_hero_razor",
 	"npc_dota_hero_mirana",
-	"npc_dota_hero_naga_siren",
 
 
 }
@@ -398,37 +687,114 @@ local sCarryList = {
 
 local sTankList = {
 
-	"npc_dota_hero_bristleback",
+	"npc_dota_hero_silencer",
+	"npc_dota_hero_warlock",
+	"npc_dota_hero_necrolyte",
+	"npc_dota_hero_oracle",
+	"npc_dota_hero_witch_doctor",
+	"npc_dota_hero_lich",
+	"npc_dota_hero_death_prophet",
+	"npc_dota_hero_lion",
+	"npc_dota_hero_dazzle",
+	"npc_dota_hero_crystal_maiden",
+	"npc_dota_hero_zuus",
+	"npc_dota_hero_jakiro",
+	"npc_dota_hero_skywrath_mage",
+	"npc_dota_hero_lina",
+	"npc_dota_hero_queenofpain",
+	"npc_dota_hero_pugna",
+	"npc_dota_hero_shadow_shaman",
+	"npc_dota_hero_bane",
+	"npc_dota_hero_sven",
+	"npc_dota_hero_luna",
+	"npc_dota_hero_antimage",
+	"npc_dota_hero_arc_warden",
+	"npc_dota_hero_drow_ranger",
+	"npc_dota_hero_bloodseeker",
+	"npc_dota_hero_phantom_assassin",
+	"npc_dota_hero_phantom_lancer",
+	"npc_dota_hero_naga_siren",
+	"npc_dota_hero_huskar",
+	"npc_dota_hero_riki",
+	"npc_dota_hero_tidehunter",
+	"npc_dota_hero_axe",
+	"npc_dota_hero_slark",
+	"npc_dota_hero_juggernaut",
 	"npc_dota_hero_chaos_knight",
+	"npc_dota_hero_bristleback",
 	"npc_dota_hero_dragon_knight",
 	"npc_dota_hero_kunkka",
+	"npc_dota_hero_skeleton_king", 
 	"npc_dota_hero_ogre_magi",
-	"npc_dota_hero_skeleton_king",
 	"npc_dota_hero_sand_king",
 	"npc_dota_hero_bounty_hunter",
 	"npc_dota_hero_slardar",
 	"npc_dota_hero_legion_commander",
-	"npc_dota_hero_legion_commander",
 	"npc_dota_hero_omniknight",
+	"npc_dota_hero_sniper",
+	"npc_dota_hero_viper",
+	"npc_dota_hero_nevermore",
+	"npc_dota_hero_medusa", 
+	"npc_dota_hero_templar_assassin",
+	"npc_dota_hero_razor",
+	"npc_dota_hero_mirana",
 
 }
 
 
 local sMidList = {
 
-	"npc_dota_hero_templar_assassin",
-	"npc_dota_hero_phantom_lancer",
+	"npc_dota_hero_silencer",
+	"npc_dota_hero_warlock",
+	"npc_dota_hero_necrolyte",
+	"npc_dota_hero_oracle",
+	"npc_dota_hero_witch_doctor",
+	"npc_dota_hero_lich",
+	"npc_dota_hero_death_prophet",
+	"npc_dota_hero_lion",
+	"npc_dota_hero_dazzle",
+	"npc_dota_hero_crystal_maiden",
+	"npc_dota_hero_zuus",
+	"npc_dota_hero_jakiro",
+	"npc_dota_hero_skywrath_mage",
+	"npc_dota_hero_lina",
+	"npc_dota_hero_queenofpain",
+	"npc_dota_hero_pugna",
+	"npc_dota_hero_shadow_shaman",
+	"npc_dota_hero_bane",
+	"npc_dota_hero_sven",
+	"npc_dota_hero_luna",
+	"npc_dota_hero_antimage",
 	"npc_dota_hero_arc_warden",
-	"npc_dota_hero_bristleback",
+	"npc_dota_hero_drow_ranger",
+	"npc_dota_hero_bloodseeker",
+	"npc_dota_hero_phantom_assassin",
+	"npc_dota_hero_phantom_lancer",
+	"npc_dota_hero_naga_siren",
+	"npc_dota_hero_huskar",
+	"npc_dota_hero_riki",
+	"npc_dota_hero_tidehunter",
+	"npc_dota_hero_axe",
+	"npc_dota_hero_slark",
+	"npc_dota_hero_juggernaut",
 	"npc_dota_hero_chaos_knight",
-	"npc_dota_hero_medusa", 
-	"npc_dota_hero_mirana",
+	"npc_dota_hero_bristleback",
+	"npc_dota_hero_dragon_knight",
+	"npc_dota_hero_kunkka",
+	"npc_dota_hero_skeleton_king", 
+	"npc_dota_hero_ogre_magi",
+	"npc_dota_hero_sand_king",
+	"npc_dota_hero_bounty_hunter",
+	"npc_dota_hero_slardar",
+	"npc_dota_hero_legion_commander",
+	"npc_dota_hero_omniknight",
+	"npc_dota_hero_sniper",
+	"npc_dota_hero_viper",
 	"npc_dota_hero_nevermore",
+	"npc_dota_hero_medusa", 
+	"npc_dota_hero_templar_assassin",
 	"npc_dota_hero_razor",
-	"npc_dota_hero_sniper",
-	"npc_dota_hero_sniper",
-	"npc_dota_hero_viper",
-	"npc_dota_hero_viper",
+	"npc_dota_hero_mirana",
 	
 }
 
@@ -465,6 +831,7 @@ end
 
 
 --预挑选阵容
+--[[
 sSelectList = {
 	[1] = tSelectPoolList[1][RandomInt( 1, #tSelectPoolList[1] )],
 	[2] = tSelectPoolList[2][RandomInt( 1, #tSelectPoolList[2] )],
@@ -472,7 +839,25 @@ sSelectList = {
 	[4] = tSelectPoolList[4][RandomInt( 1, #tSelectPoolList[4] )],
 	[5] = tSelectPoolList[5][RandomInt( 1, #tSelectPoolList[5] )],
 }
-
+--]]
+if GetTeam() == TEAM_RADIANT
+then
+	sSelectList = {
+		[1] = "npc_dota_hero_templar_assassin", --mid
+		[2] = "npc_dota_hero_bristleback", --top
+		[3] = "npc_dota_hero_sniper", --bot
+		[4] = "npc_dota_hero_viper", --bot
+		[5] = "npc_dota_hero_chaos_knight", --top
+	}
+else
+	sSelectList = {
+		[1] = "npc_dota_hero_phantom_lancer", --mid
+		[2] = "npc_dota_hero_medusa", --bot
+		[3] = "npc_dota_hero_nevermore", --top
+		[4] = "npc_dota_hero_razor", --top
+		[5] = "npc_dota_hero_bounty_hunter", --bot
+	}
+end
 
 
 
