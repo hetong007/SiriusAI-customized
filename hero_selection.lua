@@ -225,11 +225,27 @@ local sHasDevelopmentHeroList = {
 	"npc_dota_hero_razor",				--电棍
 	"npc_dota_hero_mirana",				--白虎
 
-
-
-
 }
 
+
+if GetTeam() == TEAM_RADIANT
+then
+	sSelectList = {
+		[1] = "npc_dota_hero_sniper", --mid
+		[2] = "npc_dota_hero_bristleback", --top
+		[3] = "npc_dota_hero_slardar", --bot
+		[4] = "npc_dota_hero_lich", --bot
+		[5] = "npc_dota_hero_silencer", --top
+	}
+else
+	sSelectList = {
+		[1] = "npc_dota_hero_viper", --mid
+		[2] = "npc_dota_hero_axe", --bot
+		[3] = "npc_dota_hero_chaos_knight", --top
+		[4] = "npc_dota_hero_bounty_hunter", --top
+		[5] = "npc_dota_hero_jakiro", --bot
+	}
+end
 
 local sFirstList = {
 
@@ -840,24 +856,6 @@ sSelectList = {
 	[5] = tSelectPoolList[5][RandomInt( 1, #tSelectPoolList[5] )],
 }
 --]]
-if GetTeam() == TEAM_RADIANT
-then
-	sSelectList = {
-		[1] = "npc_dota_hero_templar_assassin", --mid
-		[2] = "npc_dota_hero_bristleback", --top
-		[3] = "npc_dota_hero_sniper", --bot
-		[4] = "npc_dota_hero_viper", --bot
-		[5] = "npc_dota_hero_chaos_knight", --top
-	}
-else
-	sSelectList = {
-		[1] = "npc_dota_hero_phantom_lancer", --mid
-		[2] = "npc_dota_hero_medusa", --bot
-		[3] = "npc_dota_hero_nevermore", --top
-		[4] = "npc_dota_hero_razor", --top
-		[5] = "npc_dota_hero_bounty_hunter", --bot
-	}
-end
 
 
 
