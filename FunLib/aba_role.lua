@@ -11,7 +11,7 @@ local X = {}
 
 local sBotVersion = "New"
 -- local sBotVersion = "Mid"
-local sVersionDate = " 7.34, 2023/09/03"
+local sVersionDate = " 7.35, 2024/01/23"
 
 function X.GetBotVersion()
 	return sBotVersion, sVersionDate

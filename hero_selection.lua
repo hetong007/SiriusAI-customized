@@ -227,23 +227,93 @@ local sHasDevelopmentHeroList = {
 
 }
 
+local nameCNToString = {}
+nameCNToString["沉默"] = "npc_dota_hero_silencer"
+nameCNToString["术士"] = "npc_dota_hero_warlock"
+nameCNToString["NEC"] = "npc_dota_hero_necrolyte"
+nameCNToString["神谕"] = "npc_dota_hero_oracle"
+nameCNToString["神谕者"] = "npc_dota_hero_oracle"
+nameCNToString["巫医"] = "npc_dota_hero_witch_doctor"
+nameCNToString["巫妖"] = "npc_dota_hero_lich"
+nameCNToString["死亡先知"] = "npc_dota_hero_death_prophet"
+nameCNToString["DP"] = "npc_dota_hero_death_prophet"
+nameCNToString["莱恩"] = "npc_dota_hero_lion"
+nameCNToString["lion"] = "npc_dota_hero_lion"
+nameCNToString["戴泽"] = "npc_dota_hero_dazzle"
+nameCNToString["冰女"] = "npc_dota_hero_crystal_maiden"
+nameCNToString["宙斯"] = "npc_dota_hero_zuus"
+nameCNToString["双头龙"] = "npc_dota_hero_jakiro"
+nameCNToString["天怒"] = "npc_dota_hero_skywrath_mage"
+nameCNToString["火女"] = "npc_dota_hero_lina"
+nameCNToString["lina"] = "npc_dota_hero_lina"
+nameCNToString["女王"] = "npc_dota_hero_queenofpain"
+nameCNToString["骨法"] = "npc_dota_hero_pugna"
+nameCNToString["小Y"] = "npc_dota_hero_shadow_shaman"
+nameCNToString["痛苦之源"] = "npc_dota_hero_bane"
+nameCNToString["混乱之源"] = "npc_dota_hero_bane"
+nameCNToString["bane"] = "npc_dota_hero_bane"
+nameCNToString["斯温"] = "npc_dota_hero_sven"
+nameCNToString["sven"] = "npc_dota_hero_sven"
+nameCNToString["露娜"] = "npc_dota_hero_luna"
+nameCNToString["月骑"] = "npc_dota_hero_luna"
+nameCNToString["luna"] = "npc_dota_hero_luna"
+nameCNToString["敌法"] = "npc_dota_hero_antimage"
+nameCNToString["电狗"] = "npc_dota_hero_arc_warden"
+nameCNToString["小黑"] = "npc_dota_hero_drow_ranger"
+nameCNToString["血魔"] = "npc_dota_hero_bloodseeker"
+nameCNToString["PA"] = "npc_dota_hero_phantom_assassin"
+nameCNToString["猴子"] = "npc_dota_hero_phantom_lancer"
+nameCNToString["小娜迦"] = "npc_dota_hero_naga_siren"
+nameCNToString["娜迦"] = "npc_dota_hero_naga_siren"
+nameCNToString["哈斯卡"] = "npc_dota_hero_huskar"
+nameCNToString["力丸"] = "npc_dota_hero_riki"
+nameCNToString["潮汐"] = "npc_dota_hero_tidehunter"
+nameCNToString["斧王"] = "npc_dota_hero_axe"
+nameCNToString["小鱼人"] = "npc_dota_hero_slark"
+nameCNToString["小鱼"] = "npc_dota_hero_slark"
+nameCNToString["剑圣"] = "npc_dota_hero_juggernaut"
+nameCNToString["混沌"] = "npc_dota_hero_chaos_knight"
+nameCNToString["钢背"] = "npc_dota_hero_bristleback"
+nameCNToString["龙骑"] = "npc_dota_hero_dragon_knight"
+nameCNToString["龙骑士"] = "npc_dota_hero_dragon_knight"
+nameCNToString["昆卡"] = "npc_dota_hero_kunkka"
+nameCNToString["船长"] = "npc_dota_hero_kunkka"
+nameCNToString["骷髅王"] = "npc_dota_hero_skeleton_king"
+nameCNToString["蓝胖"] = "npc_dota_hero_ogre_magi"
+nameCNToString["沙王"] = "npc_dota_hero_sand_king"
+nameCNToString["赏金"] = "npc_dota_hero_bounty_hunter"
+nameCNToString["大鱼人"] = "npc_dota_hero_slardar"
+nameCNToString["大鱼"] = "npc_dota_hero_slardar"
+nameCNToString["军团"] = "npc_dota_hero_legion_commander"
+nameCNToString["全能"] = "npc_dota_hero_omniknight"
+nameCNToString["火枪"] = "npc_dota_hero_sniper"
+nameCNToString["毒龙"] = "npc_dota_hero_viper"
+nameCNToString["影魔"] = "npc_dota_hero_nevermore"
+nameCNToString["美杜莎"] = "npc_dota_hero_medusa"
+nameCNToString["TA"] = "npc_dota_hero_templar_assassin"
+nameCNToString["电棍"] = "npc_dota_hero_razor"
+nameCNToString["电魂"] = "npc_dota_hero_razor"
+nameCNToString["白虎"] = "npc_dota_hero_mirana"
+
+local nRadiantFirstLaneType = 1
+local nDireFirstLaneType = 1
 
 if GetTeam() == TEAM_RADIANT
 then
 	sSelectList = {
-		[1] = "npc_dota_hero_sniper", --mid
-		[2] = "npc_dota_hero_bristleback", --top
-		[3] = "npc_dota_hero_slardar", --bot
-		[4] = "npc_dota_hero_lich", --bot
-		[5] = "npc_dota_hero_silencer", --top
+		[1] = nameCNToString["TA"], --mid
+		[2] = nameCNToString["火女"], --top
+		[3] = nameCNToString["TA"], --bot
+		[4] = nameCNToString["痛苦之源"], --bot
+		[5] = nameCNToString["莱恩"], --top
 	}
 else
 	sSelectList = {
-		[1] = "npc_dota_hero_viper", --mid
-		[2] = "npc_dota_hero_axe", --bot
-		[3] = "npc_dota_hero_chaos_knight", --top
-		[4] = "npc_dota_hero_bounty_hunter", --top
-		[5] = "npc_dota_hero_jakiro", --bot
+		[1] = nameCNToString["哈斯卡"], --mid
+		[2] = nameCNToString["哈斯卡"], --bot
+		[3] = nameCNToString["敌法"], --top
+		[4] = nameCNToString["沉默"], --top 
+		[5] = nameCNToString["斯温"], --bot
 	}
 end
 
@@ -965,6 +1035,20 @@ then
 end
 
 if nDireFirstLaneType == 3 and GetTeam() == TEAM_DIRE
+then
+	sSelectList[1], sSelectList[3] = sSelectList[3], sSelectList[1]
+	tSelectPoolList[1], tSelectPoolList[3] = tSelectPoolList[3], tSelectPoolList[1]
+	tLaneAssignList[1], tLaneAssignList[3] = tLaneAssignList[3], tLaneAssignList[1]
+end
+
+if nRadiantFirstLaneType == 2 and GetTeam() == TEAM_RADIANT
+then
+	sSelectList[1], sSelectList[2] = sSelectList[2], sSelectList[1]
+	tSelectPoolList[1], tSelectPoolList[2] = tSelectPoolList[2], tSelectPoolList[1]
+	tLaneAssignList[1], tLaneAssignList[2] = tLaneAssignList[2], tLaneAssignList[1]
+end
+
+if nRadiantFirstLaneType == 3 and GetTeam() == TEAM_RADIANT
 then
 	sSelectList[1], sSelectList[3] = sSelectList[3], sSelectList[1]
 	tSelectPoolList[1], tSelectPoolList[3] = tSelectPoolList[3], tSelectPoolList[1]

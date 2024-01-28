@@ -89,7 +89,7 @@ end
 function X.GetAbilityList( bot )
 
 	local sAbilityList = {}
-	for slot = 0, 5
+	for slot = 0, 6
 	do
 		table.insert( sAbilityList, bot:GetAbilityInSlot( slot ):GetName() )
 	end

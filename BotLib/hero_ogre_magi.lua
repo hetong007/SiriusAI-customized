@@ -24,7 +24,7 @@ local tTalentTreeList = {
 }
 
 local tAllAbilityBuildList = {
-						{2,1,1,3,2,6,2,2,1,1,6,3,3,3,6},
+						{2,1,1,3,2,7,2,2,1,1,7,3,3,3,7},
 }
 
 local nAbilityBuildList = J.Skill.GetRandomBuild( tAllAbilityBuildList )

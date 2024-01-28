@@ -188,7 +188,7 @@ function X.SkillsComplement()
 
 		J.SetQueuePtToINT( bot, true )
 
-		bot:ActionQueue_UseAbility( abilityR )
+		bot:ActionQueue_UseAbilityOnEntity( abilityR, castRTarget )
 		return
 	end
 	
@@ -756,7 +756,7 @@ function X.ConsiderR()
 			and J.CanCastOnMagicImmune( botTarget )
 			and not J.IsDisabled( botTarget )
 			and not botTarget:IsDisarmed()
-			and botTarget:GetAttackTarget() ~= nil
+			and botTarget:GetAttackTarget() == bot
 		then
 			hCastTarget = bot
 			sCastMotive = 'R-辅助攻击:'..J.Chat.GetNormName( botTarget )
