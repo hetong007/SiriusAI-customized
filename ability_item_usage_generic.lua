@@ -10,7 +10,7 @@
 
 local X = {}
 local bot = GetBot()
-local bDebugMode = ( 1 == 10 )
+local bDebugMode = ( 10 == 10 )
 
 if bot:IsInvulnerable() or not bot:IsHero() or bot:IsIllusion() or bot:GetUnitName() == "npc_dota_hero_techies"
 then return end
@@ -71,6 +71,7 @@ local function AbilityLevelUpComplement()
 	if bot:GetAbilityPoints() > 0
 		and #sAbilityLevelUpList >= 1
 	then
+		J.SetReportMotive( bDebugCourier, "技能升级" )
 		local abilityToLevelup = bot:GetAbilityByName( sAbilityLevelUpList[1] )
 		if abilityToLevelup ~= nil
 			and not abilityToLevelup:IsHidden() --fix kunkka bug
@@ -81,6 +82,8 @@ local function AbilityLevelUpComplement()
 			table.remove( sAbilityLevelUpList, 1 )
 			return
 		end
+	else
+		J.SetReportMotive( bDebugCourier, "技能不升级" )
 	end
 
 end

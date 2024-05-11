@@ -21,7 +21,11 @@ end
 
 local BotBuild = require( GetScriptDirectory() .. "/BotLib/" .. string.gsub( bot:GetUnitName(), "npc_dota_", "" ) )
 
-if BotBuild == nil then return end
+if BotBuild == nil 
+then 
+	J.SetReportMotive( true, bot:GetUnitName().."文件不对" )
+	return 
+end
 
 bot.itemToBuy = {}
 bot.currentItemToBuy = nil

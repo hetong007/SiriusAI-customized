@@ -1176,6 +1176,12 @@ Site.ConsiderIsTimeToFarm["npc_dota_hero_chaos_knight"] = function()
 
 end
 
+Site.ConsiderIsTimeToFarm["npc_dota_hero_centaur"] = function()
+
+	return Site.ConsiderIsTimeToFarm["npc_dota_hero_bristleback"]()
+
+end
+
 Site.ConsiderIsTimeToFarm["npc_dota_hero_clinkz"] = function()
 
 	return Site.ConsiderIsTimeToFarm["npc_dota_hero_templar_assassin"]()
