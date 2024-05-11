@@ -77,13 +77,23 @@ local sNoticeList = {
 	[4] = "跟车队5人一起玩AI, 等你加群游戏新体验",
 	[5] = "可以和我们公屏聊天互动, 武斗文斗同时进行",
 	[6] = "血魔25级大招天赋会导致客户端BUG并卡顿, 不要去点",		
-	[7] = "天地星AI交流群④: 877599588, 欢迎你的加入",
+	[7] = "天地星AI交流群①: 877599588, 欢迎你的加入",
 	[8] = "现已实装禁止拾取大药补丁, 老哥们别钓了ORZ..",
 	[9] = "安装补丁后, 设置服:务器地点为本地主机才可生效",
 	[10] = "等√社度假回来, AI也许就会使用中立物品代币了",
-	[11] = "广告位招租 ↖(^ω^)↗,请联系:dota2jmz@163.匚om",
-	[12] = "可以在群文件里下载补丁, 禁用AI微光披风",
+--	[12] = "广告位招租 ↖(^ω^)↗,请联系:dota2jmz@163.匚om",
+	[11] = "可以在群文件里下载补丁, 禁用AI微光披风",
 	
+}
+
+local sQunList = {
+
+	[1] = "459875234",
+	[2] = "588611585",
+	[3] = "915574039",
+	[4] = "915568615",
+	[5] = "915711908",
+
 }
 
 local hasTestDone = false
@@ -119,7 +129,10 @@ function GetDesire()
 	
 		local sPushVersion = "随机搭配"
 		if sBotVersion == "New" then sPushVersion = "固定搭配" end 
-		local firstMessage = "(QQ交流群:877599588)天地星AI: "..sPushVersion..sVersionDate		
+		
+		
+		local sNoticeQun = sQunList[RandomInt(1,#sQunList)]
+		local firstMessage = "(QQ交流群:"..sNoticeQun..")天地星AI: "..sPushVersion..sVersionDate		
 		local secondMessage = firstMessage
 		
 
@@ -147,9 +160,9 @@ function GetDesire()
 		if not J.Role.IsUserMode()
 		then
 			if bAllNotice
-			then			
-				bot:ActionImmediate_Chat("AI游戏群:459875234, 加群和其他玩家一起挑战多倍难度.",true);
-	
+			then
+				local sNoticeQun = sQunList[RandomInt(1,#sQunList)]
+				bot:ActionImmediate_Chat("AI游戏群:"..sNoticeQun..", 加群和其他玩家一起挑战多倍难度.",true);
 			else
 				local sNoticeMessage = sNoticeList[RandomInt(1,#sNoticeList)]
 				bot:ActionImmediate_Chat(sNoticeMessage,true);
@@ -205,7 +218,7 @@ function GetDesire()
 	
 	if teamPlayers == nil then teamPlayers = GetTeamPlayers(GetTeam()) end
 	
-	if bot:IsAlive() --For sometime to run
+	if bot:IsAlive() 
 	then
 		if runTime ~= 0 
 			and DotaTime() < runTime + shouldRunTime
