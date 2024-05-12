@@ -7,7 +7,7 @@
 --- Link:http://steamcommunity.com/sharedfiles/filedetails/?id=1627071163
 ----------------------------------------------------------------------------------------------------
 local X = {}
-local bDebugMode = ( 1 == 10 )
+local bDebugMode = ( 10 == 10 )
 local bot = GetBot()
 
 local J = require( GetScriptDirectory()..'/FunLib/jmz_func' )
@@ -52,26 +52,29 @@ tOutFitList['outfit_carry'] = {
 
 }
 
-tOutFitList['outfit_mid'] = tOutFitList['outfit_carry']
+tOutFitList['outfit_mid'] = tOutFitList['outfit_tank']
 
-tOutFitList['outfit_priest'] = tOutFitList['outfit_carry']
+tOutFitList['outfit_priest'] = tOutFitList['outfit_tank']
 
-tOutFitList['outfit_mage'] = tOutFitList['outfit_carry']
+tOutFitList['outfit_mage'] = tOutFitList['outfit_tank']
 
 tOutFitList['outfit_tank'] = {
 	
 	"item_tank_outfit",
-	"item_echo_sabre",
+	"item_blade_mail",
+	-- "item_echo_sabre",
 	"item_crimson_guard",
-	"item_ultimate_scepter",
-	"item_heavens_halberd",
-	"item_assault",
+	"item_lotus_orb",
+	"item_black_king_bar",
+	--"item_ultimate_scepter",
+	--"item_heavens_halberd",
+	--"item_assault",
 	"item_travel_boots",
 	"item_aghanims_shard",
-	"item_satanic",
-	"item_ultimate_scepter_2",
+	--"item_satanic",
+	--"item_ultimate_scepter_2",
 	"item_heart",
-	"item_moon_shard",
+	--"item_moon_shard",
 	"item_travel_boots_2",
 	
 }
@@ -168,12 +171,24 @@ function X.SkillsComplement()
 	hEnemyList = bot:GetNearbyHeroes( 1600, true, BOT_MODE_NONE )
 	hAllyList = J.GetAlliesNearLoc( bot:GetLocation(), 1600 )
 
+	
+	castRDesire, castRTarget, sMotive = X.ConsiderR()
+	if castRDesire > 0
+	then
+		J.SetReportMotive( bDebugMode, sMotive )
+
+		--J.SetQueuePtToINT( bot, false )
+
+		bot:ActionQueue_UseAbility( abilityR )
+		return
+	end
+	
 	castQDesire, castQTarget, sMotive = X.ConsiderQ()
 	if castQDesire > 0
 	then
 		J.SetReportMotive( bDebugMode, sMotive )
 
-		J.SetQueuePtToINT( bot, false )
+		--J.SetQueuePtToINT( bot, false )
 
 		bot:ActionQueue_UseAbility( abilityQ )
 		return
@@ -184,23 +199,13 @@ function X.SkillsComplement()
 	then
 		J.SetReportMotive( bDebugMode, sMotive )
 
-		J.SetQueuePtToINT( bot, true )
+		--J.SetQueuePtToINT( bot, true )
 
-		bot:ActionQueue_UseAbility( abilityW )
+		bot:ActionQueue_UseAbilityOnEntity( abilityW , castWTarget)
 		return
 	end
 
 
-	castRDesire, castRTarget, sMotive = X.ConsiderR()
-	if castRDesire > 0
-	then
-		J.SetReportMotive( bDebugMode, sMotive )
-
-		J.SetQueuePtToINT( bot, false )
-
-		bot:ActionQueue_UseAbilityOnEntity( abilityR, castRTarget )
-		return
-	end
 
 end
 
@@ -360,8 +365,8 @@ function X.ConsiderW()
 	local nRadius = 600
 	local nCastPoint = abilityW:GetCastPoint()
 	local nManaCost = abilityW:GetManaCost()
-	local nHeahthCost = abilityW:GetSpecialValueInt('edge_damage')
-	local nDamage = 0
+	local nHeahthCost = abilityW:GetAbilityDamage() --abilityW:GetSpecialValueInt('edge_damage')
+	local nDamage = abilityW:GetAbilityDamage()
 	local nDamageType = DAMAGE_TYPE_MAGICAL
 	local nInRangeEnemyList = J.GetAroundEnemyHeroList( nCastRange )
 	local nInBonusEnemyList = J.GetAroundEnemyHeroList( nCastRange + 200 )

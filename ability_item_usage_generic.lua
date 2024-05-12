@@ -3289,13 +3289,13 @@ X.ConsiderItemDesire["item_power_treads"] = function( hItem )
 			end
 
 		end
-	elseif ( nMode == BOT_MODE_RETREAT and bot:GetActiveModeDesire() > BOT_MODE_DESIRE_MODERATE )
+	elseif (( nMode == BOT_MODE_RETREAT and bot:GetActiveModeDesire() > BOT_MODE_DESIRE_MODERATE )
 			or nMode == BOT_MODE_EVASIVE_MANEUVERS
 			or ( J.IsNotAttackProjectileIncoming( bot, 1200 ) )
 			or ( bot:HasModifier( "modifier_sniper_assassinate" ) )
 			or ( bot:GetHealth() / bot:GetMaxHealth() < 0.2 )
 			or ( nPtStat == ATTRIBUTE_STRENGTH and bot:GetHealth() / bot:GetMaxHealth() < 0.3 )
-			or ( nMode ~= BOT_MODE_LANING and bot:GetLevel() <= 10 and J.IsEnemyFacingUnit( bot, 800, 20 ) )
+			or ( nMode ~= BOT_MODE_LANING and bot:GetLevel() <= 10 and J.IsEnemyFacingUnit( bot, 800, 20 ) ))
 		then
 			if nPtStat ~= ATTRIBUTE_STRENGTH
 			then
@@ -3311,8 +3311,8 @@ X.ConsiderItemDesire["item_power_treads"] = function( hItem )
 				end
 
 			end
-	elseif nMode == BOT_MODE_ATTACK
-			or nMode == BOT_MODE_TEAM_ROAM
+	elseif ( nMode == BOT_MODE_ATTACK
+			or nMode == BOT_MODE_TEAM_ROAM ) 
 		then
 			if J.ShouldSwitchPTStat( bot, hItem )
 				and lastSwitchPtTime < DotaTime() - 0.2

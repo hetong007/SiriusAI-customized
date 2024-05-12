@@ -480,6 +480,8 @@ Item['item_assault']	= GetItemComponents( 'item_assault' )[1]
 
 Item['item_ancient_janggo']	= GetItemComponents( 'item_ancient_janggo' )[1]
 
+Item['item_angels_demise'] = GetItemComponents( 'item_angels_demise' )[1]
+
 Item['item_aeon_disk']	= GetItemComponents( 'item_aeon_disk' )[1]
 
 Item['item_bfury']	= GetItemComponents( 'item_bfury' )[1]
@@ -597,6 +599,8 @@ Item['item_orchid']	= GetItemComponents( 'item_orchid' )[1]
 Item['item_pers']	= GetItemComponents( 'item_pers' )[1]
 
 Item['item_phase_boots']	= { 'item_boots', 'item_blades_of_attack', 'item_chainmail' }
+
+Item['item_phylactery'] = GetItemComponents( 'item_phylactery' )[1]
 
 Item['item_pipe']	= GetItemComponents( 'item_pipe' )[1]
 

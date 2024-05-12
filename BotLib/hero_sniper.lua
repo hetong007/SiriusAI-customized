@@ -268,7 +268,7 @@ function X.ConsiderTarget()
 	local nTargetUint = nil
 
 	if J.IsValidHero( npcTarget )
-		and GetUnitToUnitDistance( npcTarget, bot ) >  nAttackRange
+		and GetUnitToUnitDistance( npcTarget, bot ) > nAttackRange
 		and J.IsValidHero( nInAttackRangeWeakestEnemyHero )
 	then
 		nTargetUint = nInAttackRangeWeakestEnemyHero
@@ -515,6 +515,8 @@ function X.ConsiderR()
 	if J.IsValid( nWeakestEnemyHeroInCastRange )
 		and ( J.WillMagicKillTarget( bot, nWeakestEnemyHeroInCastRange, nDamage, nCastPoint )
 			or ( X.ShouldUseR( nTempTarget, nWeakestEnemyHeroInCastRange, nDamage ) and ( bot:GetMana() > nKeepMana * 1.28 or bot:HasScepter() ) ) )
+		and not nWeakestEnemyHeroInCastRange:HasModifier( 'modifier_item_lotus_orb_active' )
+		and not nWeakestEnemyHeroInCastRange:HasModifier( 'modifier_antimage_spell_shield' )
 	then
 		castRTarget = nWeakestEnemyHeroInCastRange
 		return BOT_ACTION_DESIRE_HIGH, castRTarget

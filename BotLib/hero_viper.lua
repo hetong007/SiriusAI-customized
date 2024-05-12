@@ -480,12 +480,16 @@ function X.ConsiderR()
 		if( nWeakestEnemyHeroInCastRange ~= nil )
 		then
 			if nWeakestEnemyHeroInCastRange:GetHealth() < nWeakestEnemyHeroInCastRange:GetActualIncomingDamage( nDamage, DAMAGE_TYPE_MAGICAL )
+				and not nWeakestEnemyHeroInCastRange:HasModifier( 'modifier_item_lotus_orb_active' )
+				and not nWeakestEnemyHeroInCastRange:HasModifier( 'modifier_antimage_spell_shield' )
 			then
 				castRTarget = nWeakestEnemyHeroInCastRange
 				return BOT_ACTION_DESIRE_HIGH, castRTarget
 			end
 
 			if J.IsValidHero( npcTarget )
+				and not npcTarget:HasModifier( 'modifier_item_lotus_orb_active' )
+				and not npcTarget:HasModifier( 'modifier_antimage_spell_shield' )
 			then
 				if J.IsInRange( npcTarget, bot, nCastRange + 80 )
 					and J.CanCastOnNonMagicImmune( npcTarget )
@@ -495,6 +499,8 @@ function X.ConsiderR()
 					return BOT_ACTION_DESIRE_HIGH, castRTarget
 				else
 					if J.CanCastOnTargetAdvanced( nWeakestEnemyHeroInCastRange )
+						and not nWeakestEnemyHeroInCastRange:HasModifier( 'modifier_item_lotus_orb_active' )
+						and not nWeakestEnemyHeroInCastRange:HasModifier( 'modifier_antimage_spell_shield' )
 					then
 						castRTarget = nWeakestEnemyHeroInCastRange
 						return BOT_ACTION_DESIRE_HIGH, castRTarget
@@ -505,6 +511,8 @@ function X.ConsiderR()
 
 		if J.CanCastOnNonMagicImmune( nEnemysHerosInCastRange[1] )
 			and J.CanCastOnTargetAdvanced( nEnemysHerosInCastRange[1] )
+			and not nEnemysHerosInCastRange[1]:HasModifier( 'modifier_item_lotus_orb_active' )
+			and not nEnemysHerosInCastRange[1]:HasModifier( 'modifier_antimage_spell_shield' )
 		then
 			castRTarget = nEnemysHerosInCastRange[1]
 			return BOT_ACTION_DESIRE_HIGH, castRTarget

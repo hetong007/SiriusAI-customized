@@ -31,7 +31,8 @@ local nEnemyAverageLevel = 1
 local RB = Vector( -7175, -6670, 385 )
 local DB = Vector( 7025, 6450, 385 )
 local fKeepManaPercent = 0.39
-local fKeepHealthPercent = 0.5
+local fKeepHealthPercent = 0.3
+local fKeepHealth = 1000
 
 
 for i, id in pairs( tAllyIDList )
@@ -1208,7 +1209,8 @@ end
 
 function J.IsAllowedToSpamHealth( bot, nHPCost )
 
-	return ( bot:GetHealth() - nHPCost ) / bot:GetMaxHealth() >= fKeepHealthPercent
+	return (( bot:GetHealth() - nHPCost ) / bot:GetMaxHealth() >= fKeepHealthPercent ) 
+		   or ( bot:GetHealth() - nHPCost > fKeepHealth )
 
 end
 

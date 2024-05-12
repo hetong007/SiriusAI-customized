@@ -36,14 +36,15 @@ local tOutFitList = {}
 tOutFitList['outfit_carry'] = {
 
 	"item_crystal_maiden_outfit",
-	"item_cyclone",
+	--"item_cyclone",
 	"item_force_staff",
 	"item_aghanims_shard",
 --	"item_ultimate_scepter",
 	"item_black_king_bar",
 	"item_hurricane_pike",
+	"item_angels_demise",
 	"item_bloodthorn",
-	"item_wind_waker",
+	--"item_wind_waker",
 	"item_moon_shard",
 --	"item_ultimate_scepter_2",
 	"item_monkey_king_bar",

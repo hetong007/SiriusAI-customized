@@ -35,18 +35,23 @@ local tOutFitList = {}
 
 tOutFitList['outfit_carry'] = {
 
-	"item_mage_outfit",
-	"item_soul_ring",
+--	"item_mage_outfit",
+	"item_crystal_maiden_outfit",
+--	"item_soul_ring",
 --	"item_glimmer_cape",
 	"item_aghanims_shard",
-	"item_veil_of_discord",
-	"item_cyclone",
+	"item_phylactery",
+	"item_manta",
+	"item_moon_shard",
 	"item_ultimate_scepter",
+	"item_octarine_core",
+	"item_angels_demise",
+	"item_refresher",
+	--"item_veil_of_discord",
+	--"item_cyclone",
+	"item_ultimate_scepter_2",
 	"item_sheepstick",
 	"item_wind_waker",
-	"item_moon_shard",
-	"item_ultimate_scepter_2",
-	"item_octarine_core",
 
 }
 

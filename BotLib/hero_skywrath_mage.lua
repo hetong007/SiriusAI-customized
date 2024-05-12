@@ -39,11 +39,16 @@ tOutFitList['outfit_carry'] = {
 	"item_rod_of_atos",
 --	"item_glimmer_cape",
 	"item_aghanims_shard",
-	"item_force_staff",
-	"item_cyclone",
+	"item_kaya",
+--	"item_phylactery",
+	"item_ultimate_scepter",
+	--"item_force_staff",
+	--"item_cyclone",
 	"item_gungir",
-	"item_wind_waker",
-	"item_moon_shard",
+--	"item_wind_waker",
+--	"item_moon_shard",
+	"item_octarine_core",
+	"item_kaya_and_sange",
 	"item_ultimate_scepter_2",
 	"item_sheepstick",
 
@@ -69,6 +74,8 @@ tOutFitList['outfit_priest'] = {
 
 }
 
+tOutFitList['outfit_mage'] = tOutFitList['outfit_carry']
+--[[
 tOutFitList['outfit_mage'] = {
 
 	"item_mage_outfit",
@@ -87,6 +94,7 @@ tOutFitList['outfit_mage'] = {
 	"item_sheepstick",
 
 }
+--]]
 
 tOutFitList['outfit_tank'] = tOutFitList['outfit_carry']
 
