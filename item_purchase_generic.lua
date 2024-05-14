@@ -379,6 +379,15 @@ function ItemPurchaseThink()
 		then
 			bot:ActionImmediate_PurchaseItem( "item_dust" )
 			return
+		elseif botLevel >= 5
+			and Item.GetEmptyInventoryAmount( bot ) >= 1
+			and Item.GetItemCharges( bot, "item_ward_observer" ) <= 0
+			and bot:GetCourierValue() == 0
+			and DotaTime() - buyWardTime > 180
+		then
+			bot:ActionImmediate_PurchaseItem( "item_ward_observer" )
+			buyWardTime = DotaTime()
+			return
 		end
 	end
 		

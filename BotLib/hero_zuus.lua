@@ -44,9 +44,9 @@ tOutFitList['outfit_carry'] = {
 	"item_manta",
 	"item_moon_shard",
 	"item_ultimate_scepter",
+	"item_refresher",
 	"item_octarine_core",
 	"item_angels_demise",
-	"item_refresher",
 	--"item_veil_of_discord",
 	--"item_cyclone",
 	"item_ultimate_scepter_2",
@@ -56,7 +56,10 @@ tOutFitList['outfit_carry'] = {
 }
 
 tOutFitList['outfit_mid'] = tOutFitList['outfit_carry']
+tOutFitList['outfit_priest'] = tOutFitList['outfit_carry']
+tOutFitList['outfit_mage'] = tOutFitList['outfit_carry']
 
+--[[]
 tOutFitList['outfit_priest'] = {
 
 	"item_priest_outfit",
@@ -92,6 +95,7 @@ tOutFitList['outfit_mage'] = {
 
 }
 
+--]]
 tOutFitList['outfit_tank'] = tOutFitList['outfit_carry']
 
 X['sBuyList'] = tOutFitList[sOutfitType]
@@ -165,6 +169,7 @@ local talentDamage = 0
 
 local abilityASBonus = 0
 
+local abilityRef = nil
 
 function X.SkillsComplement()
 
@@ -181,11 +186,25 @@ function X.SkillsComplement()
 	nManaPercentage = bot:GetMana()/bot:GetMaxMana()
 	nHealthPercentage = bot:GetHealth()/bot:GetMaxHealth()
 	hEnemyHeroList = bot:GetNearbyHeroes( 1600, true, BOT_MODE_NONE )
+	abilityRef = J.IsItemAvailable( "item_refresher" )
 
 	local aether = J.IsItemAvailable( "item_aether_lens" )
 	if aether ~= nil then aetherRange = 250 end
 	if abilityAS:IsTrained() then abilityASBonus = 0.09 end
 	if talent8:IsTrained() then talentDamage = talentDamage + talent8:GetSpecialValueInt( "value" ) end
+
+	castRFRDesire, castRFRLocation = X.ConsiderRFR()
+	if ( castRFRDesire > 0 )
+	then
+
+		J.SetQueuePtToINT( bot, true )
+
+		bot:ActionQueue_UseAbility( abilityR )
+		bot:ActionQueue_UseAbility( abilityRef )
+		bot:ActionQueue_UseAbility( abilityR )
+		return
+
+	end
 
 	castRDesire = X.ConsiderR()
 	if ( castRDesire > 0 )
@@ -559,7 +578,11 @@ function X.ConsiderR()
 		local nInvUnit = J.GetInvUnitCount( false, tableNearbyEnemyHeroes )
 		if nInvUnit >= 5 then
 			return BOT_ACTION_DESIRE_MODERATE
+		elseif not J.IsItemAvailable( "item_refresher" )
+		then
+			return BOT_ACTION_DESIRE_MODERATE
 		end
+
 	end
 
 	-- modifier_warlock_fatal_bonds
@@ -596,6 +619,37 @@ function X.ConsiderR()
 	end
 
 	return BOT_ACTION_DESIRE_NONE
+end
+
+function X.ConsiderRFR()
+
+	if not abilityR:IsFullyCastable()
+		or abilityRef == nil
+		or not abilityRef:IsFullyCastable()
+	then return BOT_ACTION_DESIRE_NONE, nil end
+
+	if bot:GetMana() < abilityR:GetManaCost() * 2 + abilityRef:GetManaCost()
+	then
+		return BOT_ACTION_DESIRE_NONE, nil
+	end
+
+	local nCastRange = abilityR:GetCastRange() + aetherRange
+	local nCastPoint = abilityR:GetCastPoint()
+	local manaCost = abilityR:GetManaCost()
+
+	--进攻时
+	if J.IsInTeamFight( bot, 1400 )
+	then
+		local tableNearbyEnemyHeroes = bot:GetNearbyHeroes( 1400, true, BOT_MODE_NONE )
+		if #tableNearbyEnemyHeroes >= 2
+		then
+			hCastTarget = botTarget
+			sCastMotive = 'Q-团战刷新大'..nAoeCount
+			return BOT_ACTION_DESIRE_HIGH, hCastTarget, sCastMotive
+		end
+	end
+
+	return BOT_ACTION_DESIRE_NONE, nil
 end
 
 function X.GetRanged( bot, nRadius )

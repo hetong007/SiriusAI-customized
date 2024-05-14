@@ -343,7 +343,9 @@ function X.ConsiderRFR()
 	if not abilityR:IsFullyCastable()
 		or abilityRef == nil
 		or not abilityRef:IsFullyCastable()
-	then return BOT_ACTION_DESIRE_NONE, nil end
+	then 
+		return BOT_ACTION_DESIRE_NONE, nil 
+	end
 
 	if abilityQ:IsFullyCastable()
 		and bot:GetMana() >= ( abilityQ:GetManaCost() + abilityR:GetManaCost() )

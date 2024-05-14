@@ -256,6 +256,15 @@ function Think()
 		bot:Action_MoveToLocation(bot:GetLocation()+ RandomVector(500) )
 		return
 	end
+
+	local crossRate = 9
+	local radiant_bot_cross = RandomInt( 1, crossRate ) > crossRate - 1
+	local radiant_top_cross = RandomInt( 1, crossRate ) > crossRate - 1
+	local radiant_mid_up = RandomInt( 1, 2 ) > 1
+	local dire_bot_cross = RandomInt( 1, crossRate ) > crossRate - 1
+	local dire_top_cross = RandomInt( 1, crossRate ) > crossRate - 1
+	local dire_mid_up = RandomInt( 1, 2 ) > 1
+	local start_action = RandomInt( 25, 50 )
 	
 	if bot:IsChanneling() 
 		or bot:NumQueuedActions() > 0
@@ -271,11 +280,11 @@ function Think()
 	if DotaTime() < 0 
 	then 
 
-		if DotaTime() < - 25 
+		if DotaTime() < - start_action -- 40 
 		then 
 			local vGoOutLocation = X.GetGoOutLocation()
 			
-			if GetUnitToLocationDistance(bot, vGoOutLocation) > 500
+			if GetUnitToLocationDistance(bot, vGoOutLocation) > 100
 			then
 				bot:Action_MoveToLocation(vGoOutLocation)
 				return
@@ -289,23 +298,55 @@ function Think()
 		then
 			if bot:GetAssignedLane() == LANE_BOT 
 			then 
-				-- bot:Action_MoveToLocation( GetTower( TEAM_RADIANT, TOWER_BOT_2 ):GetLocation() + RandomVector( 20 ) )
-				bot:Action_MoveToLocation( GetRuneSpawnLocation(RUNE_BOUNTY_2) + RandomVector( 50 ) )  --B2
-				return
+				if radiant_bot_cross
+				then
+					bot:Action_MoveToLocation( GetRuneSpawnLocation(RUNE_POWERUP_2) + RandomVector( 5 ) )  --P1
+				else
+					bot:Action_MoveToLocation( GetRuneSpawnLocation(RUNE_BOUNTY_2) + RandomVector( 5 ) )  --B2
+				end
+			elseif bot:GetAssignedLane() == LANE_MID
+			then
+				if radiant_mid_up
+				then
+					bot:Action_MoveToLocation( GetRuneSpawnLocation(RUNE_POWERUP_1) + RandomVector( 5 ) )  --P1
+				else
+					bot:Action_MoveToLocation( GetRuneSpawnLocation(RUNE_BOUNTY_2) + RandomVector( 5 ) )  --P1
+				end
 			else
-				if not bFWQ then bot:Action_MoveToLocation( GetRuneSpawnLocation(RUNE_POWERUP_1) + RandomVector( 50 ) ) end  --P1
-				return
+				if radiant_top_cross
+				then
+					if not bFWQ then bot:Action_MoveToLocation( GetRuneSpawnLocation(RUNE_BOUNTY_1) + RandomVector( 5 ) ) end  --B2
+				else
+					if not bFWQ then bot:Action_MoveToLocation( GetRuneSpawnLocation(RUNE_POWERUP_1) + RandomVector( 5 ) ) end  --P1
+				end
 			end
+			return
 		else
 			if bot:GetAssignedLane() == LANE_TOP 
-			then 
-				-- bot:Action_MoveToLocation( GetTower( TEAM_DIRE, TOWER_TOP_2 ):GetLocation() + RandomVector( 20 ))
-				bot:Action_MoveToLocation( GetRuneSpawnLocation(RUNE_BOUNTY_1) + RandomVector( 50 ) )   --B1
-				return
+			then
+				if dire_top_cross
+				then
+					bot:Action_MoveToLocation( GetRuneSpawnLocation(RUNE_POWERUP_1) + RandomVector( 5 ) )   --P2
+				else
+					bot:Action_MoveToLocation( GetRuneSpawnLocation(RUNE_BOUNTY_1) + RandomVector( 5 ) )   --B1
+				end
+			elseif bot:GetAssignedLane() == LANE_MID
+			then
+				if dire_mid_up
+				then
+					bot:Action_MoveToLocation( GetRuneSpawnLocation(RUNE_BOUNTY_1) + RandomVector( 5 ) )  --P1
+				else
+					bot:Action_MoveToLocation( GetRuneSpawnLocation(RUNE_POWERUP_2) + RandomVector( 5 ) )  --P1
+				end
 			else
-				if not bFWQ then bot:Action_MoveToLocation( GetRuneSpawnLocation(RUNE_POWERUP_2) + RandomVector( 50 ) ) end  --P2
-				return
+				if dire_bot_cross
+				then
+					if not bFWQ then bot:Action_MoveToLocation( GetRuneSpawnLocation(RUNE_BOUNTY_2) + RandomVector( 5 ) ) end  --B2
+				else
+					if not bFWQ then bot:Action_MoveToLocation( GetRuneSpawnLocation(RUNE_POWERUP_2) + RandomVector( 5 ) ) end  --P2
+				end
 			end
+			return
 		end
 	end	
 	

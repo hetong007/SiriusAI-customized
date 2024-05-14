@@ -89,7 +89,8 @@ local visionRad = 2000 --假眼查重范围
 local trueSightRad = 1000 --真眼查重范围
 
 
-local RADIANT_RUNE_WARD = Vector( 2606, -1547, 0 )
+--local RADIANT_RUNE_WARD = Vector( 2606, -1547, 0 )
+local RADIANT_RUNE_WARD = Vector( 700, -1766, 663 )
 
 local RADIANT_T3TOPFALL = Vector( -6600.000000, -3072.000000, 0.000000 ) --高地防御眼
 local RADIANT_T3MIDFALL = Vector( -4314.000000, -3887.000000, 0.000000 )
@@ -107,7 +108,8 @@ local RADIANT_MANDATE1 = Vector( -1243, -200, 0 )   ---天辉中路河道眼
 local RADIANT_MANDATE2 = RADIANT_RUNE_WARD  ---天辉看符眼
 
 ---DIRE WARDING SPOT
-local DIRE_RUNE_WARD = Vector( 2606, -1547, 0 )
+--local DIRE_RUNE_WARD = Vector( 2606, -1547, 0 )
+local DIRE_RUNE_WARD = Vector( 2000, -766, 0 )
 
 local DIRE_T3TOPFALL = Vector( 3087.000000, 5690.000000, 0.000000 )
 local DIRE_T3MIDFALL = Vector( 4024.000000, 3445.000000, 0.000000 )
@@ -328,7 +330,7 @@ function Site.GetAvailableSpot( bot )
 	local temp = {}
 
 	--先算必插眼位
-	if DotaTime() < 38 * 60
+	if DotaTime() < 12 * 60
 	then
 		for _, s in pairs( Site.GetMandatorySpot() )
 		do

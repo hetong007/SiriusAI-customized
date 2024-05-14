@@ -841,14 +841,15 @@ Item['item_dragon_knight_outfit']		= { 'item_tango', 'item_flask', 'item_quellin
 
 --------------------------------------------------------------------------
 
-Item['item_priest_outfit']				= { 'item_tango', 'item_tango', 'item_branches', 'item_magic_stick', 'item_branches', 'item_arcane_boots', 'item_recipe_magic_wand', 'item_flask', 'item_urn_of_shadows' }
+Item['item_priest_outfit']				= { 'item_ward_observer', 'item_tango', 'item_tango', 'item_branches', 'item_magic_stick', 'item_branches', 'item_arcane_boots', 'item_recipe_magic_wand', 'item_flask', 'item_urn_of_shadows' }
 
 -----------------------------------------------------------------------------
 
 
-Item['item_mage_outfit']				= { 'item_tango', 'item_tango', 'item_double_branches', 'item_circlet', 'item_mantle', 'item_magic_stick', 'item_recipe_null_talisman', 'item_tranquil_boots', 'item_recipe_magic_wand', 'item_flask' }
+Item['item_mage_outfit']				= { 'item_ward_observer', 'item_tango', 'item_tango', 'item_double_branches', 'item_circlet', 'item_mantle', 'item_magic_stick', 'item_recipe_null_talisman', 'item_tranquil_boots', 'item_recipe_magic_wand', 'item_flask' }
 
-Item['item_crystal_maiden_outfit']		= { 'item_tango', 'item_double_branches', 'item_circlet', 'item_mantle', 'item_magic_stick', 'item_recipe_null_talisman',  'item_arcane_boots', 'item_recipe_magic_wand', 'item_flask' }
+--Item['item_crystal_maiden_outfit']		= {'item_tango', 'item_double_branches', 'item_circlet', 'item_mantle', 'item_magic_stick', 'item_recipe_null_talisman',  'item_arcane_boots', 'item_recipe_magic_wand', 'item_flask' }
+Item['item_crystal_maiden_outfit']		= {'item_ward_observer', 'item_tango', 'item_double_branches', 'item_circlet', 'item_mantle', 'item_magic_stick', 'item_recipe_null_talisman',  'item_arcane_boots', 'item_recipe_magic_wand', 'item_flask' }
 
 
 -----------------------------------------------------------------------------
