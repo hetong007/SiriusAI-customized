@@ -90,7 +90,7 @@ function GetDesire()
 			then
 				local sDropName = tDropItem.item:GetName()
 				local nDropOwner = tDropItem.owner
-				if not nDropOwner:IsBot()
+				if nDropOwner ~= nil and not nDropOwner:IsBot()
 					and sDropName == 'item_flask'
 				then
 					

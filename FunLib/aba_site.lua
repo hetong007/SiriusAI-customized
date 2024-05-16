@@ -96,32 +96,34 @@ local RADIANT_T3TOPFALL = Vector( -6600.000000, -3072.000000, 0.000000 ) --高�
 local RADIANT_T3MIDFALL = Vector( -4314.000000, -3887.000000, 0.000000 )
 local RADIANT_T3BOTFALL = Vector( -3586.000000, -6131.000000, 0.000000 )
 
-local RADIANT_T2TOPFALL = Vector( -4345, -1018, 663 )  --二塔野区高台
-local RADIANT_T2MIDFALL = Vector( 1283, -5109, 655 ) --天辉下路野区高台
-local RADIANT_T2BOTFALL = Vector( -514, -3321, 655 )  --下路野区内高台
+local RADIANT_T2TOPFALL = Vector( -4345, -1018, 0 )  --二塔野区高台
+local RADIANT_T2MIDFALL = Vector( 1094, -4973, 655 ) --天辉下路野区高台
+local RADIANT_T2BOTFALL = Vector( -1614, -3421, 655 )  --下路野区内高台, good
 
-local RADIANT_T1TOPFALL = Vector( -4089, 1544, 535 )  --天辉上路野区高台
-local RADIANT_T1MIDFALL = Vector( 2818, -3047, 655 )  --下方河道野区高台
-local RADIANT_T1BOTFALL = Vector( 5253, -4844, 0 ) --下路野区十字路口
+local RADIANT_T1TOPFALL = Vector( -4089, 1544, 535 )  --天辉上路野区高台, good
+local RADIANT_T1MIDFALL = Vector( 2218, -3047, 655 )  --下方河道野区高台, good
+--local RADIANT_T1BOTFALL = Vector( 5253, -4844, 0 ) --下路野区十字路口
+local RADIANT_T1BOTFALL = Vector( 3880, -4770, 0 ) --下路野区十字路口, good
 
 local RADIANT_MANDATE1 = Vector( -1243, -200, 0 )   ---天辉中路河道眼       
 local RADIANT_MANDATE2 = RADIANT_RUNE_WARD  ---天辉看符眼
 
 ---DIRE WARDING SPOT
 --local DIRE_RUNE_WARD = Vector( 2606, -1547, 0 )
+--useful console command: sv_cheat 1 -> cl_drawcross x y z
 local DIRE_RUNE_WARD = Vector( 2000, -766, 0 )
 
 local DIRE_T3TOPFALL = Vector( 3087.000000, 5690.000000, 0.000000 )
 local DIRE_T3MIDFALL = Vector( 4024.000000, 3445.000000, 0.000000 )
 local DIRE_T3BOTFALL = Vector( 6354.000000, 2606.000000, 0.000000 )
 
-local DIRE_T2TOPFALL = Vector( 514, 4107, 655 )  --夜魇上路野区高台
-local DIRE_T2MIDFALL = Vector( 2047, -769, 655 )  --夜魇中路河道野区入口
-local DIRE_T2BOTFALL = Vector( 4620, 788, 655 ) --夜魇下路高台
+local DIRE_T2TOPFALL = Vector( 1040, 3325, 399 )  --夜魇上路野区高台, good
+local DIRE_T2MIDFALL = Vector( 2047, -769, 655 )  --夜魇中路河道野区入口, good
+local DIRE_T2BOTFALL = Vector( 4620, 788, 655 ) --夜魇下路高台, good
 
-local DIRE_T1TOPFALL = Vector( -2815, 3565, 256 )   --夜魇上路野区河道路口
-local DIRE_T1MIDFALL = Vector( -760, 2053, 655 )    --夜魇中路一塔野区入口高台
-local DIRE_T1BOTFALL = Vector( 5122, -1930, 527 )   --夜魇下路一塔高台
+local DIRE_T1TOPFALL = Vector( -3250, 3900, 256 )   --夜魇上路野区河道路口, good
+local DIRE_T1MIDFALL = Vector( -760, 1353, 655 )    --夜魇中路一塔野区入口高台, good
+local DIRE_T1BOTFALL = Vector( 7700, -1500, 527 )   --夜魇下路一塔高台, good
 
 local DIRE_MANDATE1 =  DIRE_RUNE_WARD       --夜魇看符眼      
 local DIRE_MANDATE2 =  Vector( -463, 447, 0 )   --夜魇中路河道眼      
@@ -154,7 +156,7 @@ local WardSpotTowerFallDire = {
 	DIRE_T1TOPFALL,
 	DIRE_T1MIDFALL,
 	DIRE_T1BOTFALL,
-	DIRE_T2TOPFALL,
+	--DIRE_T2TOPFALL,
 	DIRE_T2MIDFALL,
 	DIRE_T2BOTFALL,
 	DIRE_T3TOPFALL,
@@ -215,10 +217,10 @@ function Site.GetMandatorySpot()
 	
 	
 	--2分钟前只插中路线眼
-	if DotaTime() < 2 * 60
+	if DotaTime() < 1 * 60
 	then
 		MandatorySpotRadiant = {
-			RADIANT_MANDATE1,
+			RADIANT_MANDATE1
 		}
 
 		MandatorySpotDire = {
@@ -292,7 +294,7 @@ function Site.GetAggressiveSpot()
 	}
 
 	local AggressiveRadiant = {
-		RADIANT_AGGRESSIVETOP,
+		--RADIANT_AGGRESSIVETOP,
 		RADIANT_AGGRESSIVEMID1,
 		RADIANT_AGGRESSIVEMID2,
 		RADIANT_AGGRESSIVEBOT

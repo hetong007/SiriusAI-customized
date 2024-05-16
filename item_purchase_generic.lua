@@ -32,6 +32,7 @@ bot.currentItemToBuy = nil
 bot.currentComponentToBuy = nil
 bot.currListItemToBuy = {}
 bot.SecretShop = false
+bot.lastFailTime = -999
 
 
 local sPurchaseList = BotBuild['sBuyList']
@@ -298,9 +299,11 @@ local function TurboModeGeneralPurchase()
 		then
 			bot.currentComponentToBuy = nil
 			bot.currListItemToBuy[#bot.currListItemToBuy] = nil
+			--bot.lastFailTime = -999
 			return
 		else
 			print( bot:GetUnitName().." 未能购买物品 "..bot.currentComponentToBuy.." : "..tostring( bot:ActionImmediate_PurchaseItem( bot.currentComponentToBuy ) ) )
+			--bot.lastFailTime = DotaTime()
 		end
 	end
 end
@@ -383,7 +386,7 @@ function ItemPurchaseThink()
 			and Item.GetEmptyInventoryAmount( bot ) >= 1
 			and Item.GetItemCharges( bot, "item_ward_observer" ) <= 0
 			and bot:GetCourierValue() == 0
-			and DotaTime() - buyWardTime > 180
+			and ( DotaTime() <= 60 or (DotaTime() > 60 and DotaTime() - buyWardTime > 180))
 		then
 			bot:ActionImmediate_PurchaseItem( "item_ward_observer" )
 			buyWardTime = DotaTime()

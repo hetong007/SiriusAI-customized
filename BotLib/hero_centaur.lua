@@ -248,7 +248,7 @@ function X.ConsiderQ()
 	if J.IsGoingOnSomeone( bot )
 	then
 		if J.IsValidHero( botTarget )
-			and J.IsInRange( botTarget, bot, nRadius - 50 )
+			and J.IsInRange( botTarget, bot, nRadius - 100 )
 			and J.CanCastOnMagicImmune( botTarget )	
 			and not J.IsDisabled( botTarget )
 		then			
