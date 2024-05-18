@@ -403,7 +403,7 @@ function ItemPurchaseThink()
 		hasBuyShard = true
 		
 		bot:ActionImmediate_PurchaseItem( "item_aghanims_shard" )
-				
+
 		return
 	end
 

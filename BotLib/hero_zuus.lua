@@ -36,7 +36,7 @@ local tOutFitList = {}
 tOutFitList['outfit_carry'] = {
 
 --	"item_mage_outfit",
-	"item_zuus_outfit",
+	"item_crystal_maiden_outfit",
 --	"item_soul_ring",
 --	"item_glimmer_cape",
 	"item_aghanims_shard",
@@ -58,6 +58,7 @@ tOutFitList['outfit_carry'] = {
 tOutFitList['outfit_mid'] = tOutFitList['outfit_carry']
 tOutFitList['outfit_priest'] = tOutFitList['outfit_carry']
 tOutFitList['outfit_mage'] = tOutFitList['outfit_carry']
+tOutFitList['outfit_tank'] = tOutFitList['outfit_carry']
 
 --[[]
 tOutFitList['outfit_priest'] = {
@@ -96,7 +97,7 @@ tOutFitList['outfit_mage'] = {
 }
 
 --]]
-tOutFitList['outfit_tank'] = tOutFitList['outfit_carry']
+
 
 X['sBuyList'] = tOutFitList[sOutfitType]
 

@@ -52,12 +52,6 @@ tOutFitList['outfit_carry'] = {
 
 }
 
-tOutFitList['outfit_mid'] = tOutFitList['outfit_tank']
-
-tOutFitList['outfit_priest'] = tOutFitList['outfit_tank']
-
-tOutFitList['outfit_mage'] = tOutFitList['outfit_tank']
-
 tOutFitList['outfit_tank'] = {
 	
 	"item_tank_outfit",
@@ -78,6 +72,10 @@ tOutFitList['outfit_tank'] = {
 	"item_travel_boots_2",
 	
 }
+
+tOutFitList['outfit_mid'] = tOutFitList['outfit_tank']
+tOutFitList['outfit_priest'] = tOutFitList['outfit_tank']
+tOutFitList['outfit_mage'] = tOutFitList['outfit_tank']
 
 X['sBuyList'] = tOutFitList[sOutfitType]
 

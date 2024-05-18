@@ -17,15 +17,14 @@ local sAbilityList = J.Skill.GetAbilityList( bot )
 local sOutfitType = J.Item.GetOutfitType( bot )
 
 local tTalentTreeList = {
-						['t25'] = {0, 10},
+						['t25'] = {10, 0},
 						['t20'] = {10, 0},
 						['t15'] = {0, 10},
 						['t10'] = {10, 0},
 }
 
 local tAllAbilityBuildList = {
-						{1,2,1,3,1,6,1,2,2,2,6,3,3,3,6},
-						{1,3,1,2,1,6,1,3,3,3,6,2,2,2,6},
+						{1,3,1,3,3,6,3,2,1,1,6,2,2,2,6},
 }
 
 local nAbilityBuildList = J.Skill.GetRandomBuild( tAllAbilityBuildList )
@@ -37,14 +36,16 @@ local tOutFitList = {}
 tOutFitList['outfit_carry'] = {
 
 	"item_bristleback_outfit",
-	"item_soul_ring",
-	"item_echo_sabre",
+	--"item_soul_ring",
 	"item_aghanims_shard",
-	"item_ultimate_scepter",
+	"item_phylactery",
+	"item_eternal_shroud",
 	"item_lotus_orb",
 	"item_black_king_bar",
+	"item_angels_demise",
 	"item_travel_boots",
-	"item_abyssal_blade",
+	"item_ultimate_scepter",
+	--"item_abyssal_blade",
 	"item_heart",
 	"item_moon_shard",
 	"item_travel_boots_2",
@@ -59,14 +60,18 @@ tOutFitList['outfit_priest'] = tOutFitList['outfit_carry']
 
 tOutFitList['outfit_mage'] = tOutFitList['outfit_carry']
 
+tOutFitList['outfit_tank'] = tOutFitList['outfit_carry']
+--[[
 tOutFitList['outfit_tank'] = {
 	
 	"item_tank_outfit",
-	"item_echo_sabre",
+	--"item_echo_sabre",
 	"item_aghanims_shard",
-	"item_crimson_guard",
+	"item_phylactery",
+	"item_eternal_shroud",
+	--"item_crimson_guard",
 	"item_ultimate_scepter",
-	"item_heavens_halberd",
+	--"item_heavens_halberd",
 	"item_travel_boots",
 	"item_assault",
 	"item_refresher",
@@ -77,6 +82,7 @@ tOutFitList['outfit_tank'] = {
 	
 
 }
+--]]
 
 X['sBuyList'] = tOutFitList[sOutfitType]
 
@@ -181,6 +187,17 @@ function X.SkillsComplement()
 	if aether ~= nil then aetherRange = 250 end
 
 	
+	castEDesire, castETarget, sMotive = X.ConsiderE()
+	if castEDesire > 0
+	then
+		J.SetReportMotive( bDebugMode, sMotive )
+
+		J.SetQueuePtToINT( bot, true )
+
+		bot:Action_UseAbilityOnEntity( abilityE, castETarget )
+		return
+	end
+
 	castRDesire, castRTarget, sMotive = X.ConsiderR()
 	if castRDesire > 0
 	then
@@ -212,17 +229,6 @@ function X.SkillsComplement()
 		J.SetQueuePtToINT( bot, true )
 
 		bot:ActionQueue_UseAbilityOnEntity( abilityW, castWTarget )
-		return
-	end
-
-	castEDesire, castETarget, sMotive = X.ConsiderE()
-	if castEDesire > 0
-	then
-		J.SetReportMotive( bDebugMode, sMotive )
-
-		J.SetQueuePtToINT( bot, true )
-
-		bot:Action_UseAbilityOnEntity( abilityE, castETarget )
 		return
 	end
 

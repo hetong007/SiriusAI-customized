@@ -301,33 +301,34 @@ nameCNToString["人马"] = "npc_dota_hero_centaur"
 nameCNToString["半人马"] = "npc_dota_hero_centaur"
 nameCNToString["末日"] = "npc_dota_hero_doom_bringer"
 
-local competing = true
-local nRadiantFirstLaneType = 1
-local nDireFirstLaneType = 1
 local sFirstList = sHasDevelopmentHeroList
 local sSecondList = sHasDevelopmentHeroList
 local sThirdList = sHasDevelopmentHeroList
 local sFourthList = sHasDevelopmentHeroList
 local sFifthList = sHasDevelopmentHeroList
 
+local competing = true
+local nRadiantFirstLaneType = 3
+local nDireFirstLaneType = 1
+
 if competing
 then
 	if GetTeam() == TEAM_RADIANT
 	then
 		sSelectList = {
-			[1] = nameCNToString["宙斯"], --mid
-			[2] = nameCNToString["人马"], --top
-			[3] = nameCNToString["PA"], --bot
-			[4] = nameCNToString["莱恩"], --bot
-			[5] = nameCNToString["双头龙"], --top
+			[1] = nameCNToString["TA"], --mid
+			[2] = nameCNToString["小娜迦"], --top
+			[3] = nameCNToString["TA"], --bot
+			[4] = nameCNToString["沙王"], --bot
+			[5] = nameCNToString["戴泽"], --top
 		}
 	else
 		sSelectList = {
-			[1] = nameCNToString["毒龙"], --mid
+			[1] = nameCNToString["火枪"], --mid
 			[2] = nameCNToString["大鱼人"], --bot
-			[3] = nameCNToString["电魂"], --top
-			[4] = nameCNToString["骨法"], --top 
-			[5] = nameCNToString["冰女"], --bot
+			[3] = nameCNToString["火枪"], --top
+			[4] = nameCNToString["火女"], --top 
+			[5] = nameCNToString["军团"], --bot
 		}
 	end
 
@@ -336,6 +337,14 @@ then
 	local sCarryList = sHasDevelopmentHeroList
 	local sTankList = sHasDevelopmentHeroList
 	local sMidList = sHasDevelopmentHeroList
+
+	tSelectPoolList = {
+		[1] = sMidList,
+		[2] = sTankList,
+		[3] = sCarryList,
+		[4] = sMageList,
+		[5] = sPriestList,
+	}
 
 	tRecommendSelectPoolList = {
 		[1] = sMidList,
